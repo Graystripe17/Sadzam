@@ -6,10 +6,10 @@ import numpy as np
 
 def fft(x):
     N = len(x)
-    W = [cmath.exp(-2j * math.pi * k * n / N) for k, n in enumerate(range(N))]
-    print("W", W)
-    print("x", x)
-    X = [a*b for a, b in zip(W, x)]
+    X = []
+    for k in range(N):
+        W_k = [cmath.exp(-2j * math.pi * n * k / N) for n in range(N)]
+        X.append(sum([a * b for a, b in zip(W_k, x)]))
     return X
 
 def is_power_of_two(n):
@@ -35,10 +35,13 @@ def cooley_tukey_recursive(x):
     weighted_even = [even * w for even, w in zip(x_even, W)]
     begin = [x + w for x, w in zip(x_odd, weighted_even)]
     end = [x - w for x, w in zip(x_odd, weighted_even)]
-    pdb.set_trace()
     return begin + end
     
 a = [0, 1, 3, 8, 0, 0, 0, 0] 
-print(fft(a))
-print(cooley_tukey_recursive(a))
-print(list(np.fft.fft(a)))
+F = fft(a)
+C = cooley_tukey_recursive(a)
+E = list(np.fft.fft(a))
+print(F)
+print(E)
+for i in range(len(a)):
+    assert(math.isclose(abs(E[i]), abs(C[i]), abs_tol=1e-8))
