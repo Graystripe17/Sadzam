@@ -43,3 +43,19 @@ def cooley_tukey_recursive(a):
         end = [x - w for x, w in zip(x_odd, weighted_even)]
         return begin + end
     return helper(x)
+
+def bitReverseOrder(X):
+    N = len(X)
+    nbits = math.ceil(math.log2(N))
+    ans = []
+    for index in range(N):
+        binString = "{0:{fill}{width}b}".format(index, fill='0', width=nbits)
+        newIndex = int(binString[::-1], 2)
+        ans.append(X[newIndex])
+    return ans
+
+def cooley_tukey_iterative(x):
+    N = len(x)
+
+# TEST BITREVERSEORDER
+print(bitReverseOrder([0, 1, 2, 3, 4, 5, 6, 7]))
