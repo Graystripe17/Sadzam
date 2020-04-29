@@ -31,6 +31,11 @@ Importantly, it doesn't use neural nets or "machine learning".
 We split it up into 6 different frequency bins
 7. We take the magnitude of the frequency
 
+## Visualization
+
+![windowed](./XC/windowed.gif)
+![magnitude](./XC/magnitude.gif)
+
 ## Running the tests
 
 pytest
