@@ -19,9 +19,9 @@ Importantly, it doesn't use neural nets or "machine learning".
 3. Low pass filter (butterworth)
 4. Downsample
 5. Hanning window in 0.1s intervals 
-6. FFT and sort into (logarithmic) bins **[IN PROGRESS]**
+6. FFT and sort into (logarithmic) bins 
 7. Save "loudest" frequencies into spectrogram
-8. Create ordering of points
+8. Create ordering of points **[IN PROGRESS]**
 9. For each "target" point, calc distance from neighboring cluster
 10. Save as keys in dict pointing to songID
 
@@ -35,6 +35,7 @@ We split it up into 6 different frequency bins
 
 ![windowed](./XC/windowed.gif)
 ![magnitude](./XC/magnitude.gif)
+![spectrogram](./XC/Alpha2.gif)
 
 ## Running the tests
 
