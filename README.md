@@ -18,7 +18,7 @@ Importantly, it doesn't use neural nets or "machine learning".
 2. Convert from stereo to mono
 3. Low pass filter (butterworth)
 4. Downsample
-5. Hanning window in 0.1s intervals 
+5. Hamming window in 0.1s intervals 
 6. FFT and sort into (logarithmic) bins 
 7. Save "loudest" frequencies into spectrogram
 8. Create ordering of points **[IN PROGRESS]**
@@ -27,15 +27,17 @@ Importantly, it doesn't use neural nets or "machine learning".
 
 ## Considerations
 
+5. Use whatever window besides rectangular to prevent spectral leakage
 6. The frequency response of the human ear is highest at 3000Hz.
 We split it up into 6 different frequency bins
 7. We take the magnitude of the frequency
+9. Complexity cannot scale up with size of database. You can't just do cross correlation
 
 ## Visualization
 
 ![windowed](./XC/windowed.gif)
 ![magnitude](./XC/magnitude.gif)
-![spectrogram](./XC/Alpha2.gif)
+![spectrogram](./XC/Alpha2.png)
 
 ## Running the tests
 
