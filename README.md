@@ -21,9 +21,10 @@ Importantly, it doesn't use neural nets or "machine learning".
 5. Hamming window in 0.1s intervals 
 6. FFT and sort into (logarithmic) bins 
 7. Save "loudest" frequencies into spectrogram
-8. Create ordering of points **[IN PROGRESS]**
+8. Create ordering of points 
 9. For each "target" point, calc distance from neighboring cluster
 10. Save as keys in dict pointing to songID
+11. Count matches
 
 ## Considerations
 
@@ -42,6 +43,15 @@ We split it up into 6 different frequency bins
 ## Running the tests
 
 pytest
+
+## Demo
+1. Add about 50 songs to the database folder
+2. Convert songs to wav using ffmpeg
+3. Build database
+4. Obtain 10 second sample (noise optional)
+5. Create frequencies array, spectrogram
+6. Count hits, make pairs
+7. Analyze hits
 
 ## Acknowledgments
 
