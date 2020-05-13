@@ -24,7 +24,7 @@ Importantly, it doesn't use neural nets or "machine learning".
 8. Create ordering of points 
 9. For each "target" point, calc distance from neighboring cluster
 10. Save as keys in dict pointing to songID
-11. Count matches
+11. Normalize results, count matches
 
 ## Considerations
 
@@ -52,6 +52,16 @@ pytest
 5. Create frequencies array, spectrogram
 6. Count hits, make pairs
 7. Analyze hits
+
+The following output correctly identifies oblivion sample + noise
+
+```python
+[(('oblivion', 'lilypotter'), 0.02227589908749329),
+ (('ijustcalledtosayiloveyou', 'steviewonder'), 0.016269960831575777),
+ (('jessiesgirl', 'rickspringfield'), 0.011674641148325358),
+ (('canttakemyeyesoffofyou', 'frankievalli'), 0.010076185795035636),
+ (('ilikethat', 'janellemonae'), 0.009678668215253582)]
+```
 
 ## Acknowledgments
 
